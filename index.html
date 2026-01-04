@@ -7,9 +7,9 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1.5rem;
             background: #0d1117;
             color: #c9d1d9;
         }
@@ -18,115 +18,154 @@
             border-bottom: 1px solid #30363d;
             padding-bottom: 0.5rem;
         }
-        ul {
-            list-style: none;
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
             padding: 0;
+            list-style: none;
         }
-        li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #21262d;
-        }
-        a {
-            color: #58a6ff;
+        .project-card {
+            display: block;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 1rem;
             text-decoration: none;
-            font-weight: 500;
+            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            min-height: 80px;
         }
-        a:hover {
-            text-decoration: underline;
+        .project-card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
-        .description {
+        .project-card:active {
+            transform: translateY(0);
+        }
+        .project-name {
+            color: #58a6ff;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            word-break: break-word;
+        }
+        .project-description {
             color: #8b949e;
-            font-size: 0.9rem;
-            margin-top: 0.25rem;
+            font-size: 0.875rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .project-card {
+                padding: 1rem;
+                min-height: 60px;
+            }
         }
     </style>
 </head>
 <body>
     <h1>myarcana's Projects</h1>
-    <ul>
-        <li>
-            <a href="https://github.com/myarcana/anki_show_audio_file">anki_show_audio_file</a>
-            <div class="description">Anki addon to go to audio files in your file browser</div>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/anti-wordle.py">anti-wordle.py</a>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/capacitor-double-tap-to-zoom-issue">capacitor-double-tap-to-zoom-issue</a>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/flash-of-dom-capacitor-issue">flash-of-dom-capacitor-issue</a>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/gp.nvim">gp.nvim</a>
-            <div class="description">Gp.nvim (GPT prompt) Neovim AI plugin: ChatGPT sessions &amp; Instructable text/code operations &amp; Speech to text [OpenAI, Ollama, Anthropic, ..]</div>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/gping">gping</a>
-            <div class="description">Ping, but with a graph</div>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/hex-color-visualiser">hex-color-visualiser</a>
-            <div class="description">A tool for visualising and comparing hex colors</div>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/hop.nvim">hop.nvim</a>
-            <div class="description">Neovim motions on speed!</div>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/html-mangareader">html-mangareader</a>
-            <div class="description">A lightweight offline CBZ/CBR and image viewer with full continuous scrolling</div>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/image-cropper">image-cropper</a>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/jenv">jenv</a>
-            <div class="description">Manage your Java environment</div>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/live-markdown">live-markdown</a>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/myarcana.github.io">myarcana.github.io</a>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/project.nvim">project.nvim</a>
-            <div class="description">The superior project management solution for neovim.</div>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/screenshot-stitcher">screenshot-stitcher</a>
-            <div class="description">Join together screenshots of chats on phones into one long image</div>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/telescope-project.nvim">telescope-project.nvim</a>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/tree-sitter-scss">tree-sitter-scss</a>
-            <div class="description">SCSS grammar for tree-sitter</div>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/typing-practise">typing-practise</a>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/url-to-text">url-to-text</a>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/vim-eunuch">vim-eunuch</a>
-            <div class="description">eunuch.vim: Helpers for UNIX</div>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/voltorb-flip">voltorb-flip</a>
-            <div class="description">Visually accurate recreation of VOLTORB Flip game from Pokemon HeartGold and SoulSilver written in TypeScript.</div>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/voltorbflip">voltorbflip</a>
-            <div class="description">A recreation of the Voltorb Flip game from Pokemon HeartGold/SoulSilver</div>
-        </li>
-        <li>
-            <a href="https://github.com/myarcana/yt-dlp">yt-dlp</a>
-            <div class="description">A feature-rich command-line audio/video downloader</div>
-        </li>
-    </ul>
+    <div class="projects-grid">
+        <a href="https://github.com/myarcana/anki_show_audio_file" class="project-card">
+            <div class="project-name">anki_show_audio_file</div>
+            <p class="project-description">Anki addon to go to audio files in your file browser</p>
+        </a>
+        <a href="https://github.com/myarcana/anti-wordle.py" class="project-card">
+            <div class="project-name">anti-wordle.py</div>
+            <p class="project-description">A reverse Wordle game where the goal is to avoid guessing the word</p>
+        </a>
+        <a href="https://github.com/myarcana/capacitor-double-tap-to-zoom-issue" class="project-card">
+            <div class="project-name">capacitor-double-tap-to-zoom-issue</div>
+            <p class="project-description">Minimal reproduction repo for Capacitor double-tap zoom bug</p>
+        </a>
+        <a href="https://github.com/myarcana/flash-of-dom-capacitor-issue" class="project-card">
+            <div class="project-name">flash-of-dom-capacitor-issue</div>
+            <p class="project-description">Minimal reproduction repo for Capacitor DOM flash issue</p>
+        </a>
+        <a href="https://github.com/myarcana/gp.nvim" class="project-card">
+            <div class="project-name">gp.nvim</div>
+            <p class="project-description">Gp.nvim (GPT prompt) Neovim AI plugin: ChatGPT sessions &amp; Instructable text/code operations &amp; Speech to text [OpenAI, Ollama, Anthropic, ..]</p>
+        </a>
+        <a href="https://github.com/myarcana/gping" class="project-card">
+            <div class="project-name">gping</div>
+            <p class="project-description">Ping, but with a graph</p>
+        </a>
+        <a href="https://github.com/myarcana/hex-color-visualiser" class="project-card">
+            <div class="project-name">hex-color-visualiser</div>
+            <p class="project-description">A tool for visualising and comparing hex colors</p>
+        </a>
+        <a href="https://github.com/myarcana/hop.nvim" class="project-card">
+            <div class="project-name">hop.nvim</div>
+            <p class="project-description">Neovim motions on speed!</p>
+        </a>
+        <a href="https://github.com/myarcana/html-mangareader" class="project-card">
+            <div class="project-name">html-mangareader</div>
+            <p class="project-description">A lightweight offline CBZ/CBR and image viewer with full continuous scrolling</p>
+        </a>
+        <a href="https://github.com/myarcana/image-cropper" class="project-card">
+            <div class="project-name">image-cropper</div>
+            <p class="project-description">Simple browser-based tool for cropping images</p>
+        </a>
+        <a href="https://github.com/myarcana/jenv" class="project-card">
+            <div class="project-name">jenv</div>
+            <p class="project-description">Manage your Java environment</p>
+        </a>
+        <a href="https://github.com/myarcana/live-markdown" class="project-card">
+            <div class="project-name">live-markdown</div>
+            <p class="project-description">Real-time markdown editor with live preview</p>
+        </a>
+        <a href="https://github.com/myarcana/myarcana.github.io" class="project-card">
+            <div class="project-name">myarcana.github.io</div>
+            <p class="project-description">Personal GitHub Pages website and portfolio</p>
+        </a>
+        <a href="https://github.com/myarcana/project.nvim" class="project-card">
+            <div class="project-name">project.nvim</div>
+            <p class="project-description">The superior project management solution for neovim.</p>
+        </a>
+        <a href="https://github.com/myarcana/screenshot-stitcher" class="project-card">
+            <div class="project-name">screenshot-stitcher</div>
+            <p class="project-description">Join together screenshots of chats on phones into one long image</p>
+        </a>
+        <a href="https://github.com/myarcana/telescope-project.nvim" class="project-card">
+            <div class="project-name">telescope-project.nvim</div>
+            <p class="project-description">Telescope integration for project.nvim - quickly switch between projects</p>
+        </a>
+        <a href="https://github.com/myarcana/tree-sitter-scss" class="project-card">
+            <div class="project-name">tree-sitter-scss</div>
+            <p class="project-description">SCSS grammar for tree-sitter</p>
+        </a>
+        <a href="https://github.com/myarcana/typing-practise" class="project-card">
+            <div class="project-name">typing-practise</div>
+            <p class="project-description">Web app for practicing and improving typing speed</p>
+        </a>
+        <a href="https://github.com/myarcana/url-to-text" class="project-card">
+            <div class="project-name">url-to-text</div>
+            <p class="project-description">Extract and convert webpage content to plain text</p>
+        </a>
+        <a href="https://github.com/myarcana/vim-eunuch" class="project-card">
+            <div class="project-name">vim-eunuch</div>
+            <p class="project-description">eunuch.vim: Helpers for UNIX</p>
+        </a>
+        <a href="https://github.com/myarcana/voltorb-flip" class="project-card">
+            <div class="project-name">voltorb-flip</div>
+            <p class="project-description">Visually accurate recreation of VOLTORB Flip game from Pokemon HeartGold and SoulSilver written in TypeScript.</p>
+        </a>
+        <a href="https://github.com/myarcana/voltorbflip" class="project-card">
+            <div class="project-name">voltorbflip</div>
+            <p class="project-description">A recreation of the Voltorb Flip game from Pokemon HeartGold/SoulSilver</p>
+        </a>
+        <a href="https://github.com/myarcana/yt-dlp" class="project-card">
+            <div class="project-name">yt-dlp</div>
+            <p class="project-description">A feature-rich command-line audio/video downloader</p>
+        </a>
+    </div>
 </body>
 </html>
